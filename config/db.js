@@ -6,7 +6,7 @@ let db;
 if (process.env.NODE_ENV !== "production") {
   db = config.get("mongoURI");
 } else {
-  db = process.env.MONGO_URI;
+  db = process.env.MONGODB_URI;
 }
 
 const connectDB = async () => {
