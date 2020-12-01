@@ -1,5 +1,3 @@
 {
-    "jwtSecret": "nasagame",
     "mongoURI": "mongodb+srv://root:root@cluster0.ks1hk.mongodb.net/bookSearchDB?retryWrites=true&w=majority"
-
 } 
