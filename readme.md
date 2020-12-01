@@ -1,32 +1,30 @@
-# Homework 11, Burgertime!
+# Google Books Search and Store!
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 ## Description
-This is a restaurant app that lets users input the names of burgers they'd like to eat. Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
+This is an app that lets users search for books via Google books. After they enter a search term and hit "submit," the first ten results appear. The user can click on a button to go to a page for more information about the book, or they can click on a button to save it to the database of favorites.
 
-Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page, where it receives a `Try Again` button. Clicking this button moves it back to the left side of the page.
+On the "Favorites" page, they can see all of the favorite books that people have saved. They can click a button to remove the book from the favorites list, and from the database entirely. My database, that is, not Google's.
 
-The app will store every burger in a database, whether devoured or not. As we already mentioned, there is an input form allowing the user to enter a new burger name. After sanitizing the data and making sure that it is in Title Case and does not have a definite article, the new name is added to the database, and it appears on the page in the "Undevoured" section.
+There is also a "Make it sexy" button, which makes the book searches more sexy.
 
-It's also fully responsive, so you can eat burgers to your heart's content, even on a mobile device!
+It's also fully responsive, so you can eat burgers to your heart's content, even on a mobile device! But I just used off-the-shelf bootstrap components for this, so that's not saying all that much.
+
 ## Table of Contents
 * [Description](#description)
 * [Live URL](#Live%20URL)
 * [Testing Instructions](#Testing%20Instructions)
 * [Contribution Instructions](#How%20to%20Contribute)
-* [Exciting Trivia](#Exciting%20Trivia)
 * [Screenshot](#Screenshot)
 * [License](#License)
 * [Questions](#Questions)
 ## Installation Instructions
-In the same directory as package.json, type ```npm install```
+In the same directory as package.json, type ```npm install```. You will also need to connect a Mongo database
 ## Live URL
-https://still-garden-84796.herokuapp.com/ 
+https://pure-scrubland-38277.herokuapp.com/
 ## How to Contribute
 No contributions are being accepted at this time.
-## Exciting Trivia
-The background graphic for this page was inspired by my TA for this course, who very kindly walked me through the logic / flow of it all this morning, when I was entirely at sea. Thank you, Paul!
 ## Screenshot
-![screnshot](./public/assets/img/screenshot.PNG)
+![screnshot](https://i.imgur.com/hNJ20ih.png)
 ## License
 License: CC BY 4.0
 ## Questions
