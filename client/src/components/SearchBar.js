@@ -5,8 +5,12 @@ export default function SearchBar(props) {
     function submitSearch(e){
         e.preventDefault();
         if(e.target.search.value){
-          searchGoogle(e.target.search.value)
-          .then(data=>{
+            let searchTerm=e.target.search.value;
+            if(e.target.sexyCheck.checked)                
+                searchTerm="sexy+"+searchTerm;
+            
+            searchGoogle(searchTerm)
+            .then(data=>{
               props.add(data.data.items)
           })
         }
@@ -18,10 +22,10 @@ export default function SearchBar(props) {
             <label htmlFor="searchBar">Book Search</label>
             <input type="text" className="form-control" id="searchBar" name="search" placeholder="Enter search term" />
         </div>
-        {/* <div className="form-check">
-            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-            <label className="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> */}
+        <div className="form-check">
+            <input type="checkbox" onClick={props.check} className="form-check-input" id="sexyCheck" />
+            <label className="form-check-label" htmlFor="sexyCheck">Make it sexy</label>
+        </div>
         <button type="submit" className="btn btn-primary">Submit</button>
     </form>
     )
