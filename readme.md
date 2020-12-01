@@ -24,7 +24,7 @@ https://pure-scrubland-38277.herokuapp.com/
 ## How to Contribute
 No contributions are being accepted at this time.
 ## Screenshot
-![screnshot](https://imgur.com/a/xHChsrB)
+![screnshot](https://i.imgur.com/hNJ20ih.png)
 ## License
 License: CC BY 4.0
 ## Questions
