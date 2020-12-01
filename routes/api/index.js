@@ -1,14 +1,16 @@
 const router = require("express").Router();
-const characterRoute = require("./character");
-const questionsRoute = require("./questions");
-const shipRoute = require("./ship");
-const locationRoute=require("./location")
+const bookController = require("../../controllers/bookController");
 
-// generic routes
-router.use("/character", characterRoute);
-router.use("/questions", questionsRoute);
-router.use("/ship", shipRoute);
-router.use("/location", locationRoute);
+
+
+router.route("/load/")
+    .get(bookController.load);
+
+router.route("/save")
+    .post(bookController.create);
+
+router.route("/remove/:id")
+    .get(bookController.remove);
 
 
 module.exports = router;

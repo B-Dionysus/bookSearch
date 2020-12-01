@@ -3,7 +3,8 @@ import React from "react";
 
 const BookContext = React.createContext({
     bookArray:[],
-    addBook:()=>{}
+    addBook:()=>{},
+    remBook:()=>{}
   });
 
 export default BookContext;

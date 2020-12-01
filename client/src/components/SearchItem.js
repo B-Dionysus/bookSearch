@@ -1,8 +1,6 @@
 import  "./style.css"
 import React from "react"
-export default function SearchItem(props) {
-    console.log(props);
-    
+export default function SearchItem(props) {    
     // This data is not reliable. We must add default values, in case the data we want are not included!
     let cat="Uncategorizable";
     let thumb="https://via.placeholder.com/150";
@@ -23,6 +21,9 @@ export default function SearchItem(props) {
             authors=props.data.volumeInfo.authors.join(", ")
         }
     }    
+
+    
+
     if(props.data.empty)
         return(
             <div className="card mt-5 bookInfo">
@@ -48,7 +49,7 @@ export default function SearchItem(props) {
                 </div>
                 </div>
                 <div className="col col-3 text-left">
-                    <button onClick={props.favorite}>Add to Favorites</button>
+    <button onClick={()=>props.favorite({id:props.data._id, volumeInfo:props.data.volumeInfo, saleInfo:props.data.saleInfo})}>{props.buttonText}</button>
                 </div>
                 <div className="col col-9 text-center">
                     <a target="_BLANK" href={props.data.saleInfo.buyLink} className="btn btn-primary">View on Google</a>

@@ -27,9 +27,6 @@ if (process.env.NODE_ENV === "production") {
 
 // API and View Routes
 app.use(routes);
-// Auth routes
-app.use("/api/users", require("./routes/users"));
-app.use("/api/auth", require("./routes/auth"));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
@@ -47,3 +44,4 @@ app.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
   }
 });
+ 

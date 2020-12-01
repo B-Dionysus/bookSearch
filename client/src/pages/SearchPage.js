@@ -1,25 +1,21 @@
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import SearchBar from "../components/SearchBar";
 import SearchItem from "../components/SearchItem";
 import BookContext from "../utils/BookContext"
 import SexyContext from "../utils/SexyContext"
+import {saveFavorite} from "../utils/API"
 
-function App() {
+function SearchPage() {
   
   const books = useContext(BookContext);
   const sexyState = useContext(SexyContext);
 
-//   function sexy(e){
-//     setSexy(e.currentTarget.checked);
-    
-//     console.log("woooo");
-    
-//   }
-
   function favorite(bookObj){
-    console.log(bookObj.currentTarget);    
+    saveFavorite(bookObj)
+    .then(res=>{
+    });
   }
 
   return (  
@@ -27,11 +23,11 @@ function App() {
       <SearchBar add={books.addBook} check={sexyState.sexy}/>
         {
           books.bookArray.map(bookElem=>(
-            <SearchItem favorite={favorite} data={bookElem} />
+            <SearchItem favorite={favorite} data={bookElem} buttonText={"Add to favorites"}/>
           ))
         }
     </div>
   );  
 }
 
-export default App;
+export default SearchPage;

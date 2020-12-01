@@ -1,8 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState, useContext } from "react";
+import {useState} from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import NavBar from "./components/NavBar";
 import SearchPage from "./pages/SearchPage";
+import SavedPage from "./pages/SavedPage";
 import BookContext from "./utils/BookContext"
 import SexyContext from "./utils/SexyContext"
 import Jumbotron from "./components/Jumbotron"
@@ -23,36 +26,30 @@ function App() {
         setBooks({...books, bookArray:[{empty:true}]})
       } 
       else{
-        bArray=newBooks;
+        bArray=newBooks;     
         setBooks({...books, bookArray:bArray});  
       }
+    },
+    remBook:function (id){
+      let bArray=this.bookArray;
+      bArray=bArray.filter((book)=>{
+        if(book._id!==id) return true;     
+      }) 
+      setBooks({...books, bookArray:bArray})
     }
   });
-
-  // function sexy(e){
-  //   setSexy(e.currentTarget.checked);
-    
-  //   console.log("woooo");
-    
-  // }
-
-  // function favorite(bookObj){
-  //   console.log(bookObj.currentTarget);    
-  // }
-  // useEffect(()=>{
-  //   console.log({path});
-  //   setPath(window.location.pathname);
-  // }, []);
-
   return (  
-    <div className="container"> 
+    <div className="container">     
+    <Router>       
       <NavBar />
       <Jumbotron sexy={sexyState.sexySt}/>
       <BookContext.Provider value={books}>
-        <SexyContext.Provider value={sexyState}>
-          <SearchPage />
+        <SexyContext.Provider value={sexyState}>   
+          <Route exact path="/" component={SearchPage} />
+          <Route exact path="/favorites" component={SavedPage} />
         </SexyContext.Provider>
-      </BookContext.Provider>
+      </BookContext.Provider>      
+      </Router>
     </div>
   );  
 }
