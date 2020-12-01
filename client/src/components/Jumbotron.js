@@ -1,5 +1,5 @@
 import "../App.css"
-import React, {useEffect} from "react"
+import React from "react"
 export default function JumboTron(props) {
 
   return(

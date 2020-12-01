@@ -33,7 +33,8 @@ function App() {
     remBook:function (id){
       let bArray=this.bookArray;
       bArray=bArray.filter((book)=>{
-        if(book._id!==id) return true;     
+        if(book._id!==id) return true;  
+        else return false;   
       }) 
       setBooks({...books, bookArray:bArray})
     }

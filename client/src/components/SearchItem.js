@@ -52,7 +52,7 @@ export default function SearchItem(props) {
     <button onClick={()=>props.favorite({id:props.data._id, volumeInfo:props.data.volumeInfo, saleInfo:props.data.saleInfo})}>{props.buttonText}</button>
                 </div>
                 <div className="col col-9 text-center">
-                    <a target="_BLANK" href={props.data.saleInfo.buyLink} className="btn btn-primary">View on Google</a>
+                    <a target="_BLANK" rel="noreferrer" href={props.data.saleInfo.buyLink} className="btn btn-primary">View on Google</a>
                 </div>
             </div>
         </div>
